@@ -1,0 +1,31 @@
+<div style="text-align:center">
+  <h2 class="text-primary">
+    {{title}}
+  </h2>
+</div>
+<div class="text-center">
+  <label class="text-success">Skill Name:</label>
+  <input type="text" #skillName/>
+  <button (click)="AddSkill(skillName.value)" [disabled]="skills.length == 0">Add</button>
+</div>
+<table class="table table-condensed h5">
+  <tbody>
+    <tr *ngFor="let x of skills">
+      <td class="text-center" (click)="ShowIt(x)">{{x}}</td>
+    </tr>
+  </tbody>
+</table>
+<br/>
+<div style="text-align:center">
+  <h2 class="text-success">
+    {{studentTitle}}
+  </h2>
+  <p *ngIf="students.length > 2">There are many students!</p>
+</div>
+<table class="table table-condensed h5">
+  <tbody>
+    <tr *ngFor="let x of students">
+      <td class="text-center" (click)="ShowIt(x.name)">{{x.name}}</td>
+    </tr>
+  </tbody>
+</table>
